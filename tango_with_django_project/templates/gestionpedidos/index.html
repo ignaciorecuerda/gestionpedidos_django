@@ -5,9 +5,14 @@
 {% block title %}Index{% endblock %}
 
 {% block body_block %}
-     <div class="page-header">   
-        <h1>Bienvenido a Gestión de pedidos</h1> 
-    </div>
+        {% if user.is_authenticated %}
+             <div class="page-header">   
+                <h1>Bienvenido a Gestión de pedidos, {{ user.username }}</h1>
+        {% else %}
+            <h1>Bienvenido a Gestión de pedidos</h1>
+        {% endif %}
+         
+            </div>
 
     <div class="panel panel-primary">
         <div class="panel-heading">
