@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>{{ cliente_name }}</h1>
+        {% if cliente %}
+            {% if pedidos %}
+            <ul>
+                {% for pedido in pedidos %}
+                <li><a href="{{ pedido.url }}">{{ pedido.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No pedidos currently in cliente.</strong>
+            {% endif %}
+        {% else %}
+            The specified cliente {{ cliente_name }} does not exist!
+        {% endif %}
+    </body>
+</html>

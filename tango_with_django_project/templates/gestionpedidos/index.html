@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Index{% endblock %}
+
+{% block body_block %}
+     <div class="page-header">   
+        <h1>Bienvenido a Gestión de pedidos</h1> 
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+           <h3 class="panel-title">Clientes</h3>
+           {% if clientes %}
+            <ul class="list-group">
+                {% for cliente in clientes %}
+                <li class="list-group-item"><a href="/gestionpedidos/cliente/{{ cliente.slug }}">{{ cliente.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>Ho hay clientes</strong>
+            {% endif %}
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Pedidos</h3>
+                {% if pedidos %}
+                <ul>
+                    {% for pedido in pedidos %}
+                    <li><a href="{{ pedido.url }}">{{ pedido.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <strong>Este cliente no tiene pedidos.</strong>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
