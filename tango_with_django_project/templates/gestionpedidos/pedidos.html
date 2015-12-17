@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rango</title>
+        <title>Gestion de pedidos</title>
     </head>
 
     <body>
@@ -14,10 +14,11 @@
                 {% endfor %}
             </ul>
             {% else %}
-                <strong>No pedidos currently in cliente.</strong>
+                <strong>Este cliente no tiene pedidos.</strong>
             {% endif %}
         {% else %}
-            The specified cliente {{ cliente_name }} does not exist!
+            El cliente {{ cliente_name }} no existe.            
         {% endif %}
+        <li><a href="/gestionpedidos/cliente/{{ cliente_name_url }}/add_pedido/">Añade un pedido</a></li>
     </body>
 </html>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from gestionpedidos.models import Cliente, Pedido
+from gestionpedidos.forms import ClienteForm, PedidoForm
 
 def index(request):
     # Query the database for a list of ALL categories currently stored.
@@ -30,7 +31,7 @@ def cliente(request, cliente_name_slug):
     context_dict = {}
 
     try:
-        # Can we find a category name slug with the given name?
+        # Can we find a cliente name slug with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
         # So the .get() method returns one model instance or raises an exception.
         cliente = Cliente.objects.get(slug=cliente_name_slug)
@@ -53,3 +54,53 @@ def cliente(request, cliente_name_slug):
     # Go render the response and return it to the client.
     return render(request, 'gestionpedidos/pedidos.html', context_dict)
 
+def add_cliente(request):
+    # A HTTP POST?
+    if request.method == 'POST':
+        form = ClienteForm(request.POST)
+
+        # Have we been provided with a valid form?
+        if form.is_valid():
+            # Save the new category to the database.
+            form.save(commit=True)
+
+            # Now call the index() view.
+            # The user will be shown the homepage.
+            return index(request)
+        else:
+            # The supplied form contained errors - just print them to the terminal.
+            print form.errors
+    else:
+        # If the request was not a POST, display the form to enter details.
+        form = ClienteForm()
+
+    # Bad form (or form details), no form supplied...
+    # Render the form with error messages (if any).
+    return render(request, 'gestionpedidos/add_cliente.html', {'form': form})
+
+
+def add_pedido(request, cliente_name_slug):
+
+    try:
+        cat = Cliente.objects.get(slug=cliente_name_slug)
+    except Cliente.DoesNotExist:
+                cat = None
+
+    if request.method == 'POST':
+        form = PedidoForm(request.POST)
+        if form.is_valid():
+            if cat:
+                pedido = form.save(commit=False)
+                pedido.cliente = cat
+                pedido.views = 0
+                pedido.save()
+                # probably better to use a redirect here.
+                return cliente(request, cliente_name_slug)
+        else:
+            print form.errors
+    else:
+        form = PedidoForm()
+
+    context_dict = {'form':form, 'cliente': cat}
+
+    return render(request, 'gestionpedidos/add_pedido.html', context_dict)
