@@ -79,10 +79,10 @@ def add_cliente(request):
     return render(request, 'gestionpedidos/add_cliente.html', {'form': form})
 
 
-def add_pedido(request, cliente_name_slug):
+def add_pedido(request, cliente_name):
 
     try:
-        cat = Cliente.objects.get(slug=cliente_name_slug)
+        cat = Cliente.objects.get(name=cliente_name)
     except Cliente.DoesNotExist:
                 cat = None
 
@@ -95,7 +95,7 @@ def add_pedido(request, cliente_name_slug):
                 pedido.views = 0
                 pedido.save()
                 # probably better to use a redirect here.
-                return cliente(request, cliente_name_slug)
+                return cliente(request, cliente_name)
         else:
             print form.errors
     else:

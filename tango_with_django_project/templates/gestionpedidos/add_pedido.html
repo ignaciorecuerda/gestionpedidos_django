@@ -6,7 +6,7 @@
 {% block body_block %}
 {% if cliente %}
 
-                <form role="form"  id="pedido_form" method="post" action="/gestionpedidos/cliente/{{cliente.slug}}/add_pedido/">
+                <form role="form"  id="pedido_form" method="post" action="/gestionpedidos/cliente/{{ cliente.name }}/add_pedido/">
             <h2 class="form-signin-heading">Añade un Pedido a <a href="/gestionpedidos/cliente/{{cliente.slug}}/"> {{ cliente.name }}</a></h2>
                     {% csrf_token %}
                     {% for hidden in form.hidden_fields %}
