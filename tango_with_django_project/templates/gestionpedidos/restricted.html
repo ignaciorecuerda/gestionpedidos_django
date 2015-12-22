@@ -2,14 +2,16 @@
 
 {% load staticfiles %}
 
+{% load easy_maps_tags %}
+
 {% block title %}About{% endblock %}
 
 {% block body_block %}
     <div class="page-header">
-                <h1>About</h1>
+                <h1>Probando mapas</h1>
             </div>
             <div>
-            	<p>Aplicación para la gestión de clientes y pedidos</p> 
+				{% easy_map "Russia, Ekaterinburg, Mira 32" 300 400 %}
             </div>
             <div>
             <img  width="390" height="420" src="{% static "images/negocio.png" %}" alt="Picture of Rango" />

@@ -43,6 +43,9 @@ LOGIN_REDIRECT_URL = '/gestionpedidos/'  # The page you want users to arrive at 
 LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
                                                                 # and are trying to access pages requiring authentication
 
+#para los mapas
+EASY_MAPS_CENTER = (-41.3, 32)
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -54,6 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gestionpedidos',
     'registration',
+    'easy_maps',
 )
 
 MIDDLEWARE_CLASSES = (

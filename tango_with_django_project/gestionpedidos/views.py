@@ -109,7 +109,7 @@ def add_pedido(request, cliente_name):
 
 @login_required
 def restricted(request):
-    return HttpResponse("Si puedes leer este texto es porque has iniciado sesión")
+    return render(request, 'gestionpedidos/restricted.html')
 
 @login_required
 def user_logout(request):
