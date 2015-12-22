@@ -47,10 +47,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'index' %}">Inicio</a></li>
-            <li><a href="{% url 'registration_register' %}">Registrate</a></li>
+            {% if user.is_authenticated %}
+              <li><a href="{% url 'auth_logout' %}?next=/gestionpedidos/">Cerrar sesión</a></li>
+              <li><a href="/gestionpedidos/restricted/">Restringido</a></li>
+            {% else %}
+              <li><a href="{% url 'registration_register' %}">Registrate</a></li>
             <li><a href="{% url 'auth_login' %}">Iniciar sesión</a></li>
-            <li><a href="{% url 'auth_logout' %}?next=/gestionpedidos/">Cerrar sesión</a></li>
+            {% endif %}
+            <li><a href="{% url 'index' %}">Inicio</a></li>
             <li><a href="{% url 'add_cliente' %}">Añade un nuevo cliente</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
           </ul>

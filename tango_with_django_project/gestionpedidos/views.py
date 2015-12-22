@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from gestionpedidos.models import Cliente, Pedido
 from gestionpedidos.forms import ClienteForm, PedidoForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     # Query the database for a list of ALL categories currently stored.
@@ -104,3 +105,14 @@ def add_pedido(request, cliente_name):
     context_dict = {'form':form, 'cliente': cat}
 
     return render(request, 'gestionpedidos/add_pedido.html', context_dict)
+
+
+@login_required
+def restricted(request):
+    return HttpResponse("Si puedes leer este texto es porque has iniciado sesión")
+
+@login_required
+def user_logout(request):
+    logout(request)
+
+    return HttpResponseRedirect('/gestionpedidos/')
