@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Gestion de pedidos</title>
-    </head>
+{% extends 'baseDosSaltos.html' %}
 
-    <body>
+{% block title %}Pedidos - {{ cliente_name }}{% endblock %}
+
+{% load easy_maps_tags %}
+
+{% block body_block %}
         <h1>{{ cliente_name }}</h1>
         {% if cliente %}
             {% if pedidos %}
             <ul>
                 {% for pedido in pedidos %}
                 <li><a href="{{ pedido.url }}">{{ pedido.title }}</a></li>
+                    <ul>
+                        <li>Fecha del pedido: {{ pedido.fechaPedido }}</li>
+                        <li>Precio: {{ pedido.precio }}</li>
+                    </ul>
                 {% endfor %}
             </ul>
             {% else %}
@@ -19,6 +23,9 @@
         {% else %}
             El cliente {{ cliente_name }} no existe.            
         {% endif %}
-        <li><a href="/gestionpedidos/cliente/{{ cliente_name }}/add_pedido/">Añade un pedido</a></li>
-    </body>
-</html>
+        <h4><a style="color:red;" href="/gestionpedidos/cliente/{{ cliente_name }}/add_pedido/">Añade un pedido a {{ cliente_name }}</a></h4>
+        <h5>Dirección de {{ cliente_name }}: {{ cliente_direccion }}</h5>
+        <div>
+            {% easy_map "Spain, Granada, recogidas" 300 400 %}
+        </div>
+{% endblock %}

@@ -37,6 +37,7 @@ def cliente(request, cliente_name_slug):
         # So the .get() method returns one model instance or raises an exception.
         cliente = Cliente.objects.get(slug=cliente_name_slug)
         context_dict['cliente_name'] = cliente.name
+        context_dict['cliente_direccion'] = cliente.direccion
 
         # Retrieve all of the associated pages.
         # Note that filter returns >= 1 model instance.

@@ -7,6 +7,7 @@ class Cliente(models.Model):
     #views = models.IntegerField(default=0)
     #likes = models.IntegerField(default=0)
     slug = models.SlugField(unique=True)
+    direccion = models.CharField(max_length=128)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
