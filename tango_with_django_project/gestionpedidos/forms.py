@@ -1,5 +1,19 @@
 from django import forms
-from gestionpedidos.models import Pedido, Cliente
+from gestionpedidos.models import Pedido, Cliente, PerfilUsuario
+from django.contrib.auth.models import User
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+
+class PerfilUsuarioForm(forms.ModelForm):
+    class Meta:
+        model = PerfilUsuario
+        fields = ('website', 'picture')
+
 
 class ClienteForm(forms.ModelForm):
     name = forms.CharField(max_length=128, help_text="Introduzca el nombre del cliente")

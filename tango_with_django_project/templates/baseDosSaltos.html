@@ -12,18 +12,18 @@
     <title>Gestion pedidos - {% block title %}How to Tango with Django!{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../static/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../../../static/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!--<link href="./Dashboard Template for Bootstrap_files/dashboard.css" rel="stylesheet">-->
-    <link href="../../static/dashboard.css" rel="stylesheet">
+    <link href="../../../static/dashboard.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../static/ie-emulation-modes-warning.js"></script>
+    <script src="../../../static/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -57,7 +57,6 @@
             <li><a href="{% url 'index' %}">Inicio</a></li>
             <li><a href="{% url 'add_cliente' %}">Añade un nuevo cliente</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
-            <a href="/gestionpedidos/register/">Register Here</a>
           </ul>
         </div>
       </div>
@@ -76,49 +75,17 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div id="botones">
-      <div class="boton" id="aumentar">Letra más grande</div>
-      <div class="boton">Letra grande</div>
-      <div class="boton" id="disminuir">Texto normal</div>
-  </div>
-
-    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../static/jquery.min.js"></script>
+    <script src="../../../static/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../static/jquery.min.js"><\/script>')</script>
-    <script src="../../static/bootstrap.min.js"></script>
+    <script src="../../../static/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../static/holder.min.js"></script>
+    <script src="../../../static/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../static/ie10-viewport-bug-workaround.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('#botones .boton').click(function(){ /*al hacer click en un botón*/
-        $('body').removeClass();    /*borre todas las clases*/
-        if(this.id == 'aumentar'){   /*si la clase botón tiene el ID aumentar*/
-          $('body').addClass('grande');  /*cargue desde el CSS la clase grande*/
-          }
-        else if(this.id == 'disminuir'){ /*si el ID es disminuir*/
-          $('body').addClass('chica'); /*cargue la clase chica*/
-        }
-        $('#botones .boton').removeClass('seleccion'); /*elimine la negrita del boton*/
-            $(this).addClass('seleccion');/*agregue la negrita al botón activo*/
-         });               
-        });
-
-        /*EFECTO HOVER*/
-        $(document).ready(function() {
-          $('#botones .boton').hover(function() {
-            $(this).addClass('sobre'); /*agregue efecto hover*/
-          }, function() {
-            $(this).removeClass('sobre');  /*quite efecto hover*/
-          });
-        });
-
-    </script>
+    <script src="../../../static/ie10-viewport-bug-workaround.js"></script>
+  
 
 </body></html>

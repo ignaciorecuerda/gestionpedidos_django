@@ -103,3 +103,48 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+/*Añadido para los distintos tipos de tamaño de letra*/ 
+footer{
+  float: right;
+  margin-right: 10px;
+}
+
+
+#cuadro{
+border:1px solid #CCCCCC;
+width:700px;
+}
+/*Botones*/ 
+#botones{
+border:1px solid #CCCCCC;
+padding:10px;
+float:left;
+margin-bottom:10px;
+margin-right:30px;
+}
+.boton{
+border:1px solid #FFFFCC;
+background-color:#003366;
+color:#FFFFFF;
+font-size:14px;
+float:left;
+margin-right:10px;
+padding:6px;
+}
+/*Tamaños de tipografías*/ 
+.grande{
+font-size:20px;
+}
+.chica{
+font-size:12px;
+}
+/*Efecto de boton activo y hover*/ 
+.seleccion{
+font-weight:800;
+}
+.sobre{
+background-color:#CC0000;
+cursor:pointer;
+}
