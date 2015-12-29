@@ -22,20 +22,21 @@
             
             function Visualiza_datos (datos) {
                 $(function () { 
+                    alert(datos.length)
                     var chart = new Highcharts.Chart({
                         chart: {
-                            type: 'bar',
+                            type: 'column',
                             renderTo: 'container'
                         },
                         title: {
-                            text: 'Pedidos de los clientes'
+                            text: 'Gráfica del número de pedidos de los clientes'
                         },
                         xAxis: {
                             categories: ['Pedidos']
                         },
                         yAxis: {
                             title: {
-                                text: 'Numero de pedidos'
+                                text: 'Número de pedidos'
                             }
                         },
                         series: [{
@@ -47,12 +48,19 @@
                         }, {
                             name: datos[4],
                             data: [datos[5]]
+                        }, {
+                            name: datos[6],
+                            data: [datos[7]]
+                        }, {
+                            name: datos[8],
+                            data: [datos[9]]
                         }],
                     });
                 });
             };
         });
     </script>
+   
 {% endblock %}
 
 {% block body_block %}
@@ -94,7 +102,7 @@
             </div>
         </div>
     </div>
-    <div><p>Por aqui va la gráfica</p></div>
+    
     <div id="container" style="height: 300px"></div>
 
     {% endblock %}

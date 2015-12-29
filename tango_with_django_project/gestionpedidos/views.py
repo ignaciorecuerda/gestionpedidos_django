@@ -174,7 +174,6 @@ def register(request):
 
 #Devuelve los datos para las graficas
 def reclama_datos(request):
-    print '------> ENTRA EN reclama_datos!!!!!!'
     listaClientes = Cliente.objects.all()    
     context_dict = {'clientes': listaClientes}
 
