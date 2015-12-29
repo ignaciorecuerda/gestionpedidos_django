@@ -22,7 +22,7 @@
             
             function Visualiza_datos (datos) {
                 $(function () { 
-                    alert(datos.length)
+                    alert('tamaño de la lista de datos: ' + datos.length)
                     var chart = new Highcharts.Chart({
                         chart: {
                             type: 'column',
@@ -32,7 +32,7 @@
                             text: 'Gráfica del número de pedidos de los clientes'
                         },
                         xAxis: {
-                            categories: ['Pedidos']
+                            categories: ['Clientes']
                         },
                         yAxis: {
                             title: {
