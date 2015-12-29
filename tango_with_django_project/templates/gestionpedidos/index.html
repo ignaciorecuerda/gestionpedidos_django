@@ -4,6 +4,57 @@
 
 {% block title %}Index{% endblock %}
 
+{% block head_block %}
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url: "{% url 'reclama_datos' %}",
+                type: 'get',                        
+                success: function(datos) {
+                    Visualiza_datos (datos);  
+                },
+                failure: function(datos) { 
+                    alert('esto no vá');
+                }
+            });
+            
+            function Visualiza_datos (datos) {
+                $(function () { 
+                    var chart = new Highcharts.Chart({
+                        chart: {
+                            type: 'bar',
+                            renderTo: 'container'
+                        },
+                        title: {
+                            text: 'Pedidos de los clientes'
+                        },
+                        xAxis: {
+                            categories: ['Pedidos']
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Numero de pedidos'
+                            }
+                        },
+                        series: [{
+                            name: datos[0],
+                            data: [datos[1]]
+                        }, {
+                            name: datos[2],
+                            data: [datos[3]]
+                        }, {
+                            name: datos[4],
+                            data: [datos[5]]
+                        }],
+                    });
+                });
+            };
+        });
+    </script>
+{% endblock %}
+
 {% block body_block %}
         {% if user.is_authenticated %}
              <div class="page-header">   
@@ -43,5 +94,7 @@
             </div>
         </div>
     </div>
+    <div><p>Por aqui va la gráfica</p></div>
+    <div id="container" style="height: 300px"></div>
 
     {% endblock %}

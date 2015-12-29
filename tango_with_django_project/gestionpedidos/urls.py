@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^cliente/(?P<cliente_name>\w+)/add_pedido/$', views.add_pedido, name='add_pedido'),
     url(r'^cliente/(?P<cliente_name_slug>[\w\-]+)/$', views.cliente, name='cliente'),
-    url(r'^register/$', views.register, name='register'),)
+    url(r'^register/$', views.register, name='register'),
+    url(r'^reclama_datos/', views.reclama_datos, name='reclama_datos'),)

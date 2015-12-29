@@ -3,16 +3,12 @@ from django.http import HttpResponse
 from gestionpedidos.models import Cliente, Pedido
 from gestionpedidos.forms import ClienteForm, PedidoForm, UserForm, PerfilUsuarioForm
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 def index(request):
-    # Query the database for a list of ALL categories currently stored.
-    # Order the categories by no. likes in descending order.
-    # Retrieve the top 5 only - or all if less than 5.
-    # Place the list in our context_dict dictionary which will be passed to the template engine.
     cliente_list = Cliente.objects.all()
     context_dict = {'clientes': cliente_list}
-
-    # Render the response and send it back!
+    
     return render(request, 'gestionpedidos/index.html', context_dict)
 
 def about(request):
@@ -175,3 +171,22 @@ def register(request):
     return render(request,
             'gestionpedidos/register.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
+
+#Devuelve los datos para las graficas
+def reclama_datos(request):
+    print '------> ENTRA EN reclama_datos!!!!!!'
+    listaClientes = Cliente.objects.all()    
+    context_dict = {'clientes': listaClientes}
+
+    datosJson=[]
+
+    #numero de pedidos de cada cliente
+    for cliente in listaClientes:  
+        #meto el nombre del cliente
+        datosJson.append(cliente.name)
+
+        pedidos = Pedido.objects.filter(cliente=cliente)
+        #meto el numero de pedidos del cliente
+        datosJson.append(pedidos.count())
+
+    return JsonResponse(datosJson, safe=False)
