@@ -22,7 +22,7 @@
             
             function Visualiza_datos (datos) {
                 $(function () { 
-                    alert('tamaño de la lista de datos: ' + datos.length)
+                    alert('(index.html linea 25) tamaño de la lista de datos: ' + datos.length)
                     var chart = new Highcharts.Chart({
                         chart: {
                             type: 'column',
@@ -87,20 +87,6 @@
             {% endif %}
         </div>
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Pedidos</h3>
-                {% if pedidos %}
-                <ul>
-                    {% for pedido in pedidos %}
-                    <li><a href="{{ pedido.url }}">{{ pedido.title }}</a></li>
-                    {% endfor %}
-                </ul>
-                {% else %}
-                    <strong>Este cliente no tiene pedidos.</strong>
-                {% endif %}
-            </div>
-        </div>
     </div>
     
     <div id="container" style="height: 300px"></div>
