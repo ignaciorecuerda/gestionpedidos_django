@@ -132,15 +132,16 @@ def reclama_datos(request):
     listaClientes = Cliente.objects.all()    
     context_dict = {'clientes': listaClientes}
 
-    datosJson=[]
+    datosJsonClientes=[]
+    datosJsonPedidos=[]
 
     #numero de pedidos de cada cliente
     for cliente in listaClientes:  
         #meto el nombre del cliente
-        datosJson.append(cliente.name)
+        datosJsonClientes.append(cliente.name)
 
         pedidos = Pedido.objects.filter(cliente=cliente)
         #meto el numero de pedidos del cliente
-        datosJson.append(pedidos.count())
+        datosJsonPedidos.append(pedidos.count())
 
-    return JsonResponse(datosJson, safe=False)
+    return JsonResponse({'nombresClientes': datosJsonClientes, 'numeroPedidos': datosJsonPedidos}, safe=False)

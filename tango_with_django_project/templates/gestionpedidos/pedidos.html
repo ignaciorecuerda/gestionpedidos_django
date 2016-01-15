@@ -26,6 +26,6 @@
         <h4><a style="color:red;" href="/gestionpedidos/cliente/{{ cliente_name }}/add_pedido/">Añade un pedido a {{ cliente_name }}</a></h4>
         <h5>Dirección de {{ cliente_name }}: {{ cliente_direccion }}</h5>
         <div>
-            {% easy_map "Spain, Granada, recogidas" 300 400 %}
+            {% easy_map cliente_direccion 300 400 %}
         </div>
 {% endblock %}

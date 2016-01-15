@@ -21,8 +21,7 @@
             });
             
             function Visualiza_datos (datos) {
-                $(function () { 
-                    alert('(index.html linea 25) tamaño de la lista de datos: ' + datos.length)
+                $(function () {                     
                     var chart = new Highcharts.Chart({
                         chart: {
                             type: 'column',
@@ -32,7 +31,7 @@
                             text: 'Gráfica del número de pedidos de los clientes'
                         },
                         xAxis: {
-                            categories: ['Clientes']
+                            categories: datos.nombresClientes
                         },
                         yAxis: {
                             title: {
@@ -40,20 +39,8 @@
                             }
                         },
                         series: [{
-                            name: datos[0],
-                            data: [datos[1]]
-                        }, {
-                            name: datos[2],
-                            data: [datos[3]]
-                        }, {
-                            name: datos[4],
-                            data: [datos[5]]
-                        }, {
-                            name: datos[6],
-                            data: [datos[7]]
-                        }, {
-                            name: datos[8],
-                            data: [datos[9]]
+                            name: 'Visitas',
+                            data: datos.numeroPedidos
                         }],
                     });
                 });
