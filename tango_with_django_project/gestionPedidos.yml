@@ -1,4 +1,4 @@
-- hosts: azure
+- hosts: ubuntu14
   sudo: yes
   remote_user: nacho2
   tasks:
@@ -11,27 +11,7 @@
     git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=~/gestionPedidos version=HEAD
   - name: Damos permisos de ejecucion a la carpeta gestionPedidos
     command: chmod -R +x ~/gestionPedidos
-  - name: Instalar Django 
-    pip: name=Django version=1.7
-  - name: Instalar django-appconf 
-    pip: name=django-appconf version==0.6.2
-  - name: Instalar django-classy-tags 
-    pip: name=django-classy-tags version=1.7
-  - name: Instalar django-easy-maps 
-    pip: name=django-easy-maps=0.9.2
-  - name: Instalar django-registration-redux
-    pip: name=django-registration-redux=1.2
-  - name: Instalar funcsigs
-    pip: name=funcsigs version=0.4
-  - name: Instalar geopy
-    pip: name=geopy version=1.11.0
-  - name: Instalar Jinja2
-    pip: name=Jinja2 version=2.8
-  - name: Instalar jmespath
-    pip: name=jmespath version=0.9.0
-  - name: Instalar Pillow
-    pip: name=Pillow version=3.0.0
-  - name: Instalar requests
-    pip: name=requests version=2.6.2
+  - name: Instalar todos los requeriments 
+    command: sudo pip install -r ~/gestionPedidos/dfgsdfgsdfg
   - name: lanzamos aplicacion
     command: sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
