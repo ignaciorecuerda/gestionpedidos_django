@@ -1,0 +1,92 @@
+- hosts: ubuntu14
+  sudo: yes
+  remote_user: parallels
+  tasks:
+  - name: Instalar todos los paquetes necesarios para la aplicacion
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Clonar repositorio gestionPedidos de git
+    git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=~/gestionPedidos version=HEAD
+  - name: Damos permisos de ejecucion a la carpeta gestionPedidos
+    command: chmod -R +x ~/gestionPedidos
+  - name: Instalar todos los requeriments 
+    command: sudo pip install -r ~/gestionPedidos/dfgsdfgsdfg
+  - name: lanzamos aplicacion
+    command: sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+
+- hosts: azureubuntu
+  sudo: yes
+  remote_user: nacho
+  tasks:
+  - name: Instalar todos los paquetes necesarios para la aplicacion
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Clonar repositorio gestionPedidos de git
+    git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=gestionPedidos version=HEAD force=yes
+  - name: Damos permisos de ejecucion a la carpeta gestionPedidos
+    command: chmod -R +x gestionPedidos
+  - name: Instala python-dev
+    command: sudo apt-get install python-dev -y
+  - name: Instala dependencias pillow
+    command: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk -y
+  - name: instalo pip
+    apt: name=python-pip state=present
+  - name: instala pillow
+    command: sudo pip install pillow 
+  - name: Instalar todos los requeriments 
+    command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
+  - name: lanzamos aplicacion
+    command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+
+- hosts: azure2
+  sudo: yes
+  remote_user: nacho2
+  tasks:
+  - name: Instalar todos los paquetes necesarios para la aplicacion
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Clonar repositorio gestionPedidos de git
+    git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=gestionPedidos version=HEAD force=yes
+  - name: Damos permisos de ejecucion a la carpeta gestionPedidos
+    command: chmod -R +x gestionPedidos
+  - name: Instala python-dev
+    command: sudo apt-get install python-dev
+  - name: Instala deendencias pillow
+    command: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+  - name: instala pillow
+    command: sudo pip install pillow 
+  - name: Instalar todos los requeriments 
+    command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
+  - name: libero puerto 80
+    command: sudo fuser -k 80/tcp
+  - name: lanzamos aplicacion
+    command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+
+- hosts: azure
+  sudo: yes
+  remote_user: nacho
+  tasks:
+  - name: Instalar todos los paquetes necesarios para la aplicacion
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Clonar repositorio gestionPedidos de git
+    git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=gestionPedidos version=HEAD force=yes
+  - name: Damos permisos de ejecucion a la carpeta gestionPedidos
+    command: chmod -R +x gestionPedidos
+  - name: Instalar todos los requeriments 
+    command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
+  - name: lanzamos aplicacion
+    command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+
+
+
+
+
