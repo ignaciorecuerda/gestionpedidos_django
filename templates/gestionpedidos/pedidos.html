@@ -1,0 +1,31 @@
+{% extends 'baseDosSaltos.html' %}
+
+{% block title %}Pedidos - {{ cliente_name }}{% endblock %}
+
+{% load easy_maps_tags %}
+
+{% block body_block %}
+        <h1>{{ cliente_name }}</h1>
+        {% if cliente %}
+            {% if pedidos %}
+            <ul>
+                {% for pedido in pedidos %}
+                <li><a href="{{ pedido.url }}">{{ pedido.title }}</a></li>
+                    <ul>
+                        <li>Fecha del pedido: {{ pedido.fechaPedido }}</li>
+                        <li>Precio: {{ pedido.precio }}</li>
+                    </ul>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>Este cliente no tiene pedidos.</strong>
+            {% endif %}
+        {% else %}
+            El cliente {{ cliente_name }} no existe.            
+        {% endif %}
+        <h4><a style="color:red;" href="/gestionpedidos/cliente/{{ cliente_name }}/add_pedido/">Añade un pedido a {{ cliente_name }}</a></h4>
+        <h5>Dirección de {{ cliente_name }}: {{ cliente_direccion }}</h5>
+        <div>
+            {% easy_map cliente_direccion 300 400 %}
+        </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'baseTresSaltos.html' %}
+
+{% block title %}Añadir Pedido{% endblock %}
+
+
+{% block body_block %}
+{% if cliente %}
+
+                <form role="form"  id="pedido_form" method="post" action="/gestionpedidos/cliente/{{ cliente.name }}/add_pedido/">
+            <h2 class="form-signin-heading">Añade un Pedido a <a href="/gestionpedidos/cliente/{{cliente.slug}}/"> {{ cliente.name }}</a></h2>
+                    {% csrf_token %}
+                    {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+
+                    {% for field in form.visible_fields %}
+                        {{ field.errors }}
+                        {{ field.help_text }}<br/>
+                        {{ field }}<br/>
+                    {% endfor %}
+
+                <br/>
+            <button class="btn btn-primary" type="submit" name="submit">Añade pedido</button>
+                </form>
+            {%  else %}
+            <p>Este cliente no existe</p>
+        {%  endif %}
+
+
+        {% endblock %}
