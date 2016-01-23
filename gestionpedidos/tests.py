@@ -1,5 +1,6 @@
 from django.test import TestCase
 from gestionpedidos.models import Cliente, Pedido
+from gestionpedidos.views import *
 from django.test.client import RequestFactory
 
 class TestsGestionPedidos(TestCase):
