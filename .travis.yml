@@ -1,0 +1,16 @@
+# Build Environment
+build_environment: Ubuntu 14.04
+
+# language setting
+language: python
+
+# version lenguaje
+python:
+ - "2.7"
+
+install:
+ - pip install -r requirements.txt
+
+ # Running npm test to run your test cases
+script:
+ - python manage.py test
