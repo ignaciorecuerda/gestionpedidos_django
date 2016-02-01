@@ -10,5 +10,7 @@ class TestsGestionPedidos(TestCase):
 
 	def test_nombre_cliente(self):
 		cliente = Cliente.objects.get(name='Test')
+		self.assertEqual(cliente.name, 'Test')
+		self.assertEqual(cliente.slug, 'test')
 		self.assertEqual(cliente.direccion, 'Pais, ciudad, calle')
 		print ("direccion correcta")
