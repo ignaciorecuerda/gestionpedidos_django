@@ -19,7 +19,8 @@ class TestsGestionPedidos(TestCase):
 	######## test para pedidos ########
 	def setUp(self):
 		test = Cliente(name='TestTapas',slug='testTapas',direccion='Pais, ciudad, calle')
-		Pedido.objects.create(cliente=test.id, title='TestPedido', url="www.test.es", views=1, fechaPedido='02/02/16', precio='1 euro')
+		test.save()
+		Pedido.objects.create(cliente=test, title='TestPedido', url="www.test.es", views=1, fechaPedido='02/02/16', precio='1 euro')
 
 	def test_pedido(self):
 		pedido = Pedido.objects.get(title='TestPedido')
