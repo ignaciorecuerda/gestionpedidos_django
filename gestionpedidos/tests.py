@@ -5,7 +5,7 @@ from django.test.client import RequestFactory
 
 class TestsGestionPedidos(TestCase):
 
-	#Test para clientes
+	######## Test para clientes ########
 	def setUp(self):
 		Cliente.objects.create(name='Test',slug='test',direccion='Pais, ciudad, calle')
 
@@ -16,10 +16,10 @@ class TestsGestionPedidos(TestCase):
 		self.assertEqual(cliente.direccion, 'Pais, ciudad, calle')
 		print ("direccion correcta")
 
-	#test para pedidos
+	######## test para pedidos ########
 	def setUp(self):
 		test = Cliente(name='TestTapas',slug='testTapas',direccion='Pais, ciudad, calle')
-		Pedido.objects.create(cliente='test', title='TestPedido', url="www.test.es", views=1, fechaPedido='02/02/16', precio='1 euro')
+		Pedido.objects.create(cliente=test, title='TestPedido', url="www.test.es", views=1, fechaPedido='02/02/16', precio='1 euro')
 
 	def test_pedido(self):
 		pedido = Pedido.objects.get(title='TestPedido')
