@@ -5,7 +5,7 @@ from django.test.client import RequestFactory
 
 class TestsGestionPedidos(TestCase):
 
-	def test_crear_cliente(self):
+	def setUp(self):
 		Cliente.objects.create(nombre='Test',slug='test',direccion='Pais, ciudad, calle')
 
 	def test_nombre_cliente(self):
