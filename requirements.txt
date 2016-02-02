@@ -9,3 +9,6 @@ geopy==1.11.0
 six==1.10.0
 Pillow==3.0.0
 gunicorn==19.4.5
+whitenoise==2.0.6
+dj-static==0.0.6
+static3==0.6.1
