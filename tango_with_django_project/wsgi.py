@@ -13,5 +13,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tango_with_django_project.setti
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 #from whitenoise.django import DjangoWhiteNoise
-application = get_wsgi_application()
+application = Cling(get_wsgi_application())
+#application = get_wsgi_application()
 #application = DjangoWhiteNoise(application)
