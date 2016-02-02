@@ -29,11 +29,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'dk(_t&1x*%u#r6nxv$#6s-s_n^yewf_k=iazc08#mmj8g4oumz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #Para registro
 REGISTRATION_OPEN = True        # If True, users can register
