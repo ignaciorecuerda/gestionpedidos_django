@@ -14,6 +14,7 @@ RUN sudo  git clone https://github.com/ignaciorecuerda/gestionPedidos.git
 RUN sudo apt-get install -y python-setuptools
 RUN sudo apt-get -y install python-dev
 RUN sudo apt-get -y install build-essential
+RUN sudo easy_install pip
 RUN sudo pip install --upgrade pip
 
 #Instalo dependencias
