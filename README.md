@@ -1,5 +1,6 @@
-# gestionpedidos_django
-aplicación de gestión de clientes y pedidos hecha con django
+# Gestion de pedidos: Proyecto para Infraestructura Virtual
+
+####Aplicación para llevar la gestión de clientes y pedidos hecha con django por Jose Ignacio Recuerda Cambil
 
 [![Build Status](https://travis-ci.org/ignaciorecuerda/gestionpedidos_django.svg?branch=master)](https://travis-ci.org/ignaciorecuerda/gestionpedidos_django)
 
@@ -9,20 +10,20 @@ aplicación de gestión de clientes y pedidos hecha con django
 
 [![Azure](https://camo.githubusercontent.com/0a0a0d99a96e23a0af8b612b45cf0e204080ad6c/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f6f717572366b3730706f797363786a2f617a7572652e706e673f646c3d31)](http://gestion-pedidos-service-ruwzh.cloudapp.net/gestionpedidos/)
 
-#Integración continua
+##Integración continua
 
-Para la integración continua de mi proyecto he usado Travis.
+Para la integración continua de mi proyecto he usado **Travis**.
 
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/integracionContinua.md)
 
 
-#Creando entorno de pruebas
+##Creando entorno de pruebas con Docker
 
-Como entorno de pruebas voy a usar Docker. 
+Como entorno de pruebas voy a usar **Docker**. 
 
 Docker es una plataforma que se encarga de automatizar el despliegue de aplicaciones en contenedores de software similares a donde se ejecutará, dando así la opción de probar la aplicación antes de que pase a producción.
 
-La imagen de mi aplicación en Docker está en este [enlace](https://hub.docker.com/r/ignaciorecuerda2/gestionpedidos/)
+La imagen de mi aplicación en Docker está en este [enlace](https://hub.docker.com/r/ignaciorecuerda2/gestionpedidos_django/)
 
 Para crear el entrono de pruebas basta con ejecutar los siguientes comandos: 
 
@@ -33,7 +34,17 @@ Para crear el entrono de pruebas basta con ejecutar los siguientes comandos:
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/documentacionDocker.md)
 
 
-#Desplegando en el PaaS Heroku
-He escogido el PaaS Heroku. Lo he escogido porque es muy sencillo de usar, ya que se puede enlazar directamente con un repositorio de gitHub y gestionar de una manera muy fácil con unos comandos de terminal.
+##Desplegando en el PaaS Heroku
+
+He escogido el PaaS **Heroku**. Lo he escogido porque es muy sencillo de usar, ya que se puede enlazar directamente con un repositorio de gitHub y gestionar de una manera muy fácil con unos comandos de terminal.
 
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/despliegueHeroku.md)
+
+
+##Despliegue automático con Fabric
+
+Para automatizar el despliegue he hecho uso de la herramienta **Fabric** .
+Con ayuda de Fabric puedo desplegar mi entorno de pruebas creado anteriormente con Docker. 
+Para todo esto he creado un archivo llamado [fabfile.py](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/fabfile.py) con el que consigo automatizar todo el proceso.
+
+[Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/despliegueFabric.md)
