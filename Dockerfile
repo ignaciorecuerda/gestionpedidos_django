@@ -19,4 +19,4 @@ RUN sudo pip install --upgrade pip
 
 #Instalo dependencias
 RUN ls gestionPedidos/
-RUN cd gestionPedidos/ && sudo pip install -r requirements.txt
+RUN sudo pip install -r requirements.txt
