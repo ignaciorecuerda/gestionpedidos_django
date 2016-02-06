@@ -19,4 +19,4 @@ RUN sudo pip install --upgrade pip
 
 #Instalo dependencias
 RUN ls
-RUN cd gestionpedidos_django/ && sudo pip install -r requirements.txt
+RUN cd gestionPedidos/ && sudo pip install -r requirements.txt
