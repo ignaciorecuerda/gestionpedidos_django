@@ -8,7 +8,7 @@ RUN sudo apt-get update
 
 #Descargar aplicación 
 RUN sudo apt-get install -y git
-RUN sudo  git clone https://github.com/ignaciorecuerda/gestionPedidos.git
+RUN sudo  git clone https://github.com/ignaciorecuerda/gestionpedidos_django.git
 
 #Instalacíon software necesario
 RUN sudo apt-get install -y python-setuptools
