@@ -22,6 +22,9 @@
   - name: instala pillow
     command: sudo pip install pillow 
   - name: Instalar todos los requeriments 
-    command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
+    command: sudo pip install -r gestionPedidos/requirements.txt
   - name: lanzamos aplicacion
-    command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+    command: nohup sudo python gestionPedidos/manage.py runserver 0.0.0.0:80
+    register: lanzaAplicacion
+  - debug: msg="{{ lanzaAplicacion.stdout }}"
+  - debug: msg="{{ lanzaAplicacion.stderr }}"
