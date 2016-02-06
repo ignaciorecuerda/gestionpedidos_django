@@ -3,7 +3,7 @@ from gestionpedidos.models import Cliente, Pedido
 from gestionpedidos.views import *
 from django.test.client import RequestFactory
 
-class TestsGestionPedidos(TestCase):
+class TestsGestionPedidosClientes(TestCase):
 
 	######## Test para clientes ########
 	def setUp(self):
@@ -16,6 +16,7 @@ class TestsGestionPedidos(TestCase):
 		self.assertEqual(cliente.direccion, 'Pais, ciudad, calle')
 		print ("direccion correcta")
 
+#class Test
 	######## test para pedidos ########
 	# def setUp(self):
 	# 	test = Cliente(name='TestTapas',slug='testTapas',direccion='Pais, ciudad, calle')
