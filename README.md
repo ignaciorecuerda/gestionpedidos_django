@@ -22,3 +22,9 @@ Para crear el entrono de pruebas basta con ejecutar los siguientes comandos:
 * `make run`
 
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/documentacionDocker.md)
+
+
+#Desplegando en el PaaS Heroku
+He escogido el PaaS Heroku. Lo he escogido porque es muy sencillo de usar, ya que se puede enlazar directamente con un repositorio de gitHub y gestionar de una manera muy fácil con unos comandos de terminal.
+
+[Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/despliegueHeroku.md)
