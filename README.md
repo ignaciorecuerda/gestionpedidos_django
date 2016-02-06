@@ -13,7 +13,7 @@ aplicación de gestión de clientes y pedidos hecha con django
 
 Para la integración continua de mi proyecto he usado Travis.
 
-[Más detalle]()
+[Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/integracionContinua.md)
 
 
 #Creando entorno de pruebas
