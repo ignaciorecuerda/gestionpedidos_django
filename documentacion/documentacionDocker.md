@@ -1,6 +1,6 @@
 #Docker
 
-Para crear la imagen lo primero que tengo que hacer es crear el fichero [Dockerfile](https://github.com/ignaciorecuerda/gestionPedidos/blob/master/Dockerfile)
+Para crear la imagen lo primero que tengo que hacer es crear el fichero [Dockerfile](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/Dockerfile)
 
 Luego nos vamos a la web [Docker Hub](https://hub.docker.com) y nos registramos.
 Pinchamos sobre "Create Automated Build" como se puede ver en la imagen para que nos cree los build automáticamente.
@@ -9,7 +9,7 @@ Pinchamos sobre "Create Automated Build" como se puede ver en la imagen para que
 
 Damos permisos a Docker Hub para que pueda conectarse a nuestros repositorios de GitHub y así seleccionar el repositorio para el cual queramos crear la imagen.
 
-Ahora docker se encarga de hacer una nueva build a partir del archivo [DockerFile](https://github.com/ignaciorecuerda/gestionPedidos/blob/master/Dockerfile)
+Ahora docker se encarga de hacer una nueva build a partir del archivo [DockerFile](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/Dockerfile)
 
 ![Docker hub success](https://www.dropbox.com/s/d763qfkujfjzk4m/hito4.2.png?dl=1)
 
