@@ -18,5 +18,5 @@ RUN sudo easy_install pip
 RUN sudo pip install --upgrade pip
 
 #Instalo dependencias
-RUN ls gestionPedidos/
+RUN ls 
 RUN sudo pip install -r requirements.txt
