@@ -79,7 +79,7 @@ Para todo esto he creado un archivo llamado [fabfile.py](https://github.com/igna
 
 ##Despliegue en el IaaS Azure
 
-Para desplegar mi infraestructura he usado el IaaS de Azure, haciendo uso de una suscripción gratuita.
+Para desplegar mi infraestructura he usado el IaaS de **Azure**, haciendo uso de una suscripción gratuita.
 
 Para tener la aplicación funcionando en Azure con la ayuda de Vagrant y Ansible hay que ejecutar:
 
