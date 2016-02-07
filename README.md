@@ -113,3 +113,5 @@ make azure
 ```
 
 Este comando hace uso de **Fabric**
+
+La aplicación ejecutandose en la máquina de azure esta [Aquí](http://gestion-pedidos-service-ruwzh.cloudapp.net/gestionpedidos/)
