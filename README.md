@@ -81,7 +81,9 @@ Para todo esto he creado un archivo llamado [fabfile.py](https://github.com/igna
 
 Para desplegar mi infraestructura he usado el IaaS de Azure, haciendo uso de una suscripción gratuita.
 
-Para tener la aplicación funcionando en Azure con la ayuda de Vagrant y Ansible hay que ejecutar
+Para tener la aplicación funcionando en Azure con la ayuda de Vagrant y Ansible hay que ejecutar:
+
+`make azure`
 
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/despliegueAzure.md)
 
@@ -92,4 +94,16 @@ Para tener la aplicación funcionando en Azure con la ayuda de Vagrant y Ansible
 
 ```
 fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net ejecutar_tests
+```
+
+##Descargar repositorio
+
+```
+fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net descargar_repositorio
+```
+
+##Para aprovisionar la máquina de azure y lanzar la aplicacion
+
+```
+make azure
 ```

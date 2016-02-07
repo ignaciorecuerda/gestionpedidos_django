@@ -28,8 +28,7 @@ Para subir el certificado tenemos que entrar en el [portal de azure](https://man
 
 Ahora necesito un archivo .pem para autenticar la máquina de azure desde nuestro fichero Vagrantfile, para ello ejecutamos estos dos comandos:
 
-* `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem` Generamos el archivo .pem
-`cat ~/.ssh/azurevagrant.key > ~/azurevagrant.pem` Concatenamos la clave primaria con el certificado en el archivo .pem
+* `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem` Generamos el archivo .pem `cat ~/.ssh/azurevagrant.key > ~/azurevagrant.pem` Concatenamos la clave primaria con el certificado en el archivo .pem
 
 Ahora es el momento de crear mi archivo [Vagrantfile](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/Vagrantfile). 
 

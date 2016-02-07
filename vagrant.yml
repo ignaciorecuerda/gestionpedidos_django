@@ -25,5 +25,5 @@
     command: sudo pip install -r gestionPedidos/requirements.txt
   # - name: libero puerto 80
   #   command: sudo fuser -k 80/tcp
-  - name: lanzamos aplicacion
-    command: nohup sudo python gestionPedidos/manage.py runserver 0.0.0.0:80
+  # - name: lanzamos aplicacion
+  #   command: nohup sudo python gestionPedidos/manage.py runserver 0.0.0.0:80

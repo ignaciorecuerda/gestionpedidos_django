@@ -7,6 +7,18 @@ def descargar_repositorio():
 	run('sudo apt-get install -y git')
 	run('sudo git clone https://github.com/ignaciorecuerda/gestionpedidos_django.git')
 
+#Hacer test
+def ejecutar_tests():
+	run('cd gestionPedidos && make test')
+
+#Aprovisiona maquina en azure
+def lanzar_azure():
+	run('cd gestionPedidos && make azure')
+
+#Lanza aplicacion en azure
+def lanzar_app_azure():
+	run('sudo python gestionPedidos/manage.py runserver 0.0.0.0:80')
+
 #Usando Docker
 #Instalando mi version de Docker
 def descargar_imagen_docker():
@@ -18,18 +30,3 @@ def descargar_imagen_docker():
 #Ejecucion de docker
 def ejecuta_docker():
 	run('sudo docker run -p 8000:8000 -i -t ignaciorecuerda2/gestionpedidos_django')
-
-#Hacer test
-def ejecutar_tests():
-	run('cd gestionPedidos && make test')
-
-#Aprovisiona maquina en azure
-def lanzar_azure():
-	run('cd gestionPedidos && make azure')
-
-#Lanza aplicacion en azure
-def lanzar_app():
-	run('cd gestionPedidos && make run')
-
-def lanzar_app_azure():
-	run('sudo python gestionPedidos/manage.py runserver 0.0.0.0:80')
