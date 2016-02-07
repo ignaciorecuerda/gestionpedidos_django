@@ -13,7 +13,7 @@
 
 ##Introducción
 
-Con este proyecto se consigue la creación y aprovisionamiento de las máquinas de prueba y de producción. Las máquinas serán PaaS (Heroku) y IaaS (Azure).
+Con este proyecto se consigue la creación y aprovisionamiento de las máquinas de prueba y de producción. Se utilizará como PaaS (Heroku) y como IaaS (Azure).
 
 La aplicación lleva un seguimiento de los clientes y de los pedidos de cada cliente. En la página inicial muestra una gráfica con el número de pedidos de todos los clientes que se encuentran en la base de datos. Se pueden dar de alta nuevos clientes rellenando un formulario con sus datos, y por otro lado, añadir pedidos individuales para cada uno de las clientes, introduciendo la fecha de compra, enlace del producto y el precio. 
 
