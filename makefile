@@ -1,3 +1,9 @@
+docker:
+	sudo apt-get update
+	sudo apt-get install -y docker.io
+	sudo docker pull ignaciorecuerda2/gestionpedidos_django
+	sudo docker run -t -i ignaciorecuerda2/gestionpedidos_django  /bin/bash
+
 azure:
 	# sudo apt-get update
 	# sudo apt-get install -y vagrant
@@ -8,3 +14,6 @@ azure:
 	vagrant plugin install vagrant-azure
 	sudo vagrant up 
 	sudo vagrant provision
+
+test:
+	python manage.py test

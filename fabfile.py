@@ -20,6 +20,4 @@ def ejecuta_docker():
 
 #Hacer test
 def ejecutar_tests():
-	run('cd gestionPedidos/')
-	run('ls')
-	run('cd gestionPedidos && python manage.py test')
+	run('cd gestionPedidos && make test')
