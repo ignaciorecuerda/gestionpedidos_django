@@ -32,11 +32,6 @@ class TestsGestionPedidosPedidos(TestCase):
 		self.assertEqual(pedido.fechaPedido, '02/02/16')
 		self.assertEqual(pedido.precio, '1 euro')
 
-#Test para comprobar que puede servir las paginas
-class TestsServirPaginas(TestCase):
-	#Para pagina index
-	def test_pagina_index(self):
-		response = self.client.get('/gestionpedidos/cliente/carlos/')
-		self.assertEqual(response.status_code, 200)
+
 
 
