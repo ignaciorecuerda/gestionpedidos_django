@@ -111,3 +111,5 @@ fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net descargar_repositorio
 ```
 make azure
 ```
+
+Este comando hace uso de **Fabric**
