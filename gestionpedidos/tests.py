@@ -36,7 +36,7 @@ class TestsGestionPedidosPedidos(TestCase):
 class TestsServirPaginas(TestCase):
 	#Para pagina index
 	def test_pagina_index(self):
-		response = self.client.get('gestionpedidos')
+		response = self.client.get('/gestionpedidos/')
 		self.assertEqual(response.status_code, 200)
 
 
