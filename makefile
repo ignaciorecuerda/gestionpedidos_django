@@ -6,6 +6,7 @@ docker:
 
 azure:
 	sudo vagrant provision
+	fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net lanzar_app_azure
 
 test:
 	python manage.py test

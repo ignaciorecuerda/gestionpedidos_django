@@ -12,6 +12,10 @@ por ejemplo para descargarme la imagen de docker uso:
 
 `fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net descargar_imagen_docker`
 
+O para lanzar la anplicación en azure con Vagrant y Ansible uso:
+
+`fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net lanzar_azure`
+
 Una imagen de la aplicación corriendo en mi máquina de **azure** con el despliegue de docker:
 
 ![aplicacion](https://www.dropbox.com/s/0qjil56m7mpjsbv/despliegueFabric.png?dl=1)

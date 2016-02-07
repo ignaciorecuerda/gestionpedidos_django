@@ -1,6 +1,7 @@
 # Gestion de pedidos: Proyecto para Infraestructura Virtual
 
-####Aplicación para llevar la gestión de clientes y pedidos hecha con django por Jose Ignacio Recuerda Cambil
+####Aplicación para llevar la gestión de clientes y pedidos 
+####Realizado por: **Jose Ignacio Recuerda Cambil**
 
 [![Build Status](https://travis-ci.org/ignaciorecuerda/gestionpedidos_django.svg?branch=master)](https://travis-ci.org/ignaciorecuerda/gestionpedidos_django)
 
@@ -10,9 +11,42 @@
 
 [![Azure](https://camo.githubusercontent.com/0a0a0d99a96e23a0af8b612b45cf0e204080ad6c/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f6f717572366b3730706f797363786a2f617a7572652e706e673f646c3d31)](http://gestion-pedidos-service-ruwzh.cloudapp.net/gestionpedidos/)
 
+##Introducción
+
+Con este proyecto se consigue la creación y aprovisionamiento de las máquinas de prueba y de producción. Las máquinas serán PaaS (Heroku) y IaaS (Azure).
+
+La aplicación lleva un seguimiento de los clientes y de los pedidos de cada cliente. En la página inicial muestra una gráfica con el número de pedidos de todos los clientes que se encuentran en la base de datos. Se pueden dar de alta nuevos clientes rellenando un formulario con sus datos, y por otro lado, añadir pedidos individuales para cada uno de las clientes, introduciendo la fecha de compra, enlace del producto y el precio. 
+
+**La aplicacion esta despegada en:**
+
+* [Heroku (PaaS)](http://gestionpedidos.herokuapp.com/gestionpedidos/)
+
+* [Azure (IaaS)](http://gestion-pedidos-service-ruwzh.cloudapp.net/gestionpedidos/)
+
+##Herramientas usadas
+
+* **Travis** (Integración continua)
+
+* **Docker** (Entorno de pruebas)
+
+* **Fabric** (Despliegue automático)
+
+* **Vagrant** (Crear máquinas)
+
+* **Ansible** (Aprovisionar máquinas)
+
+* **Heroku** (PaaS)
+
+* **Azure**(IaaS)
+
+* **Sqlite** (Base de Datos) 
+
+* **Django** (Aplicación)
+
+
 ##Integración continua
 
-Para la integración continua de mi proyecto he usado **Travis**.
+Para la integración continua de mi proyecto he usado **Travis**. Cada actualización que haga en el repositorio automáticamente travis se encargará de pasar los test para asegurarse que la aplicación funciona correctamente.
 
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/integracionContinua.md)
 
@@ -25,16 +59,10 @@ Docker es una plataforma que se encarga de automatizar el despliegue de aplicaci
 
 La imagen de mi aplicación en Docker está en este [enlace](https://hub.docker.com/r/ignaciorecuerda2/gestionpedidos_django/)
 
-Para crear el entrono de pruebas basta con ejecutar los siguientes comandos: 
-
-* `make docker`
-* `cd gestionPedidos`
-* `make run`
-
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/documentacionDocker.md)
 
 
-##Desplegando en el PaaS Heroku
+##Despliegue en el PaaS Heroku
 
 He escogido el PaaS **Heroku**. Lo he escogido porque es muy sencillo de usar, ya que se puede enlazar directamente con un repositorio de gitHub y gestionar de una manera muy fácil con unos comandos de terminal.
 
@@ -44,7 +72,24 @@ He escogido el PaaS **Heroku**. Lo he escogido porque es muy sencillo de usar, y
 ##Despliegue automático con Fabric
 
 Para automatizar el despliegue he hecho uso de la herramienta **Fabric** .
-Con ayuda de Fabric puedo desplegar mi entorno de pruebas creado anteriormente con Docker. 
-Para todo esto he creado un archivo llamado [fabfile.py](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/fabfile.py) con el que consigo automatizar todo el proceso.
+Con ayuda de Fabric puedo desplegar mi entorno de pruebas creado anteriormente con Docker, o el que comentaré a continuación con Ansible y Vagrant en Azure. 
+Para todo esto he creado un archivo llamado [fabfile.py](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/fabfile.py) en el que defino ordenes paara automatizar.
 
 [Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/despliegueFabric.md)
+
+##Despliegue en el IaaS Azure
+
+Para desplegar mi infraestructura he usado el IaaS de Azure, haciendo uso de una suscripción gratuita.
+
+Para tener la aplicación funcionando en Azure con la ayuda de Vagrant y Ansible hay que ejecutar
+
+[Más detalle](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/documentacion/despliegueAzure.md)
+
+
+#Comandos para usar este repositorio
+
+##Para ejecutar los test
+
+```
+fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net ejecutar_tests
+```

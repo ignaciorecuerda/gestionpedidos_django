@@ -13,7 +13,7 @@ Damos permisos a Docker Hub para que pueda conectarse a nuestros repositorios de
 
 Ahora docker se encarga de hacer una nueva build a partir del archivo [DockerFile](https://github.com/ignaciorecuerda/gestionpedidos_django/blob/master/Dockerfile)
 
-![Docker hub success](https://www.dropbox.com/s/d763qfkujfjzk4m/hito4.2.png?dl=1)
+![Docker hub success](https://www.dropbox.com/s/s7urqtrp8j9effn/docker.png?dl=1)
 
 Docker Hub, ahora de manera automática, hará un nuevo build cada vez que realicemos algún cambio sobre nuestro código y ejecutemos un `git push`
 
@@ -29,8 +29,8 @@ El comando `make docker` hace lo siguiente:
 * Descarga la imagen de de Docker Hub
 * Ejecuta la imagen descargada
 
-Solo hay que abrir nuestro navegador, introducir <ip del contenedor>:3000 y tendremos la aplicación ejecutandose.
+Una captura de la aplicación funcionando con Docker
 
-Pongo una captura de la aplicación corriendo en el contenedor creado
+![aplicacion](https://www.dropbox.com/s/0qjil56m7mpjsbv/despliegueFabric.png?dl=1)
 
-![aplicación funcionando](https://www.dropbox.com/s/p3bbh1x7fqysbiy/ejr10.5.png?dl=1)
+

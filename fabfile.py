@@ -13,6 +13,7 @@ def descargar_imagen_docker():
 	run('sudo apt-get update')
 	run('sudo apt-get install -y docker.io')
 	run('sudo docker pull ignaciorecuerda2/gestionpedidos_django')
+	# run('sudo docker run -p 8000:8000 -i -t ignaciorecuerda2/gestionpedidos_django')
 
 #Ejecucion de docker
 def ejecuta_docker():
@@ -29,3 +30,6 @@ def lanzar_azure():
 #Lanza aplicacion en azure
 def lanzar_app():
 	run('cd gestionPedidos && make run')
+
+def lanzar_app_azure():
+	run('sudo python gestionPedidos/manage.py runserver 0.0.0.0:80')
