@@ -20,7 +20,7 @@ Los pasos que he seguido para tener la aplicación en Heroku son los siguientes:
 ![Seleccionando despliegue automático](https://www.dropbox.com/s/196loe5m7so9l9b/hito6.png?dl=1)
 
 
-#Sirviendo contenidos staticos 
+#Sirviendo contenidos estáticos 
 
 Para el despliegue en Heroku he tenido que modificar varias cosas para poder servir el contenido estático de mi aplicación. 
 Hay que realizar los siguientes pasos:
