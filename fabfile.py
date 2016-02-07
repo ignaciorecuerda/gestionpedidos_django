@@ -17,3 +17,8 @@ def descargar_imagen_docker():
 #Ejecucion de docker
 def ejecuta_docker():
 	run('sudo docker run -p 8000:8000 -i -t ignaciorecuerda2/gestionpedidos_django')
+
+def ejecutar_tests():
+	run('cd gestionPedidos/')
+	run('ls')
+	run('cd gestionPedidos && python manage.py test')
