@@ -21,3 +21,7 @@ def ejecuta_docker():
 #Hacer test
 def ejecutar_tests():
 	run('cd gestionPedidos && make test')
+
+#Hacer test
+def lanzar_azure():
+	run('cd gestionPedidos && make azure')
