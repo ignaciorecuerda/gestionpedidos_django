@@ -95,6 +95,8 @@ Para tener la aplicación funcionando en Azure con la ayuda de Vagrant y Ansible
 
 * `fab -H vagrant@gestion-pedidos-service-ruwzh.cloudapp.net ejecutar_tests`
 
+o bien:
+
 * `make test`
 
 
