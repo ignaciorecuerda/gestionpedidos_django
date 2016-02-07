@@ -9,3 +9,6 @@ azure:
 
 test:
 	python manage.py test
+
+run:
+	sudo python gestionPedidos/manage.py runserver 0.0.0.0:80
